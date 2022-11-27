@@ -87,7 +87,8 @@ def scientist(start, number_of_rows):
               } for x in range(start, start + number_of_rows, 1)
             ]
 
-pd.DataFrame(scientist(0, 5000000)).to_csv('example.csv', index=False)
+# запускам первый раз
+# pd.DataFrame(scientist(0, 5000000)).to_csv('example.csv', index=False)
 
-for i in range(1, 20):
-  pd.DataFrame(scientist(5000000 * i, 5000000)).to_csv('example.csv', index=False, mode='a', header=False)
+# запускаем все последующие разы(для i-ого раза)
+pd.DataFrame(scientist(5000000 * i, 5000000)).to_csv('example.csv', index=False, mode='a', header=False)
